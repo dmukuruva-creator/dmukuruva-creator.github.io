@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aleph-Nought — Mathematics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:       #0d0c0a;
+    --bg2:      #131210;
+    --text:     #ddd5c4;
+    --muted:    #7a7265;
+    --faint:    #2a2822;
+    --gold:     #c4a96b;
+    --gold-dim: #7a6840;
+    --rule:     #2e2b26;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Watermark symbols ── */
+  body::before {
+    content: "∀ε>0 ∃δ>0";
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--faint);
+    letter-spacing: 0.12em;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--rule);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise 0.8s ease forwards;
+  }
+
+  section:nth-child(1) { animation-delay: 0.1s; border-top: none; }
+  section:nth-child(2) { animation-delay: 0.25s; }
+  section:nth-child(3) { animation-delay: 0.4s; }
+  section:nth-child(4) { animation-delay: 0.55s; }
+  section:nth-child(5) { animation-delay: 0.7s; }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Navigation ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--bg) 60%, transparent);
+  }
+
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-name:hover { color: var(--text); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── Hero ── */
+  #hero {
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-top: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.8;
+    border-left: 1px solid var(--gold-dim);
+    padding-left: 1.4rem;
+    font-style: italic;
+  }
+
+  /* ── Section headings ── */
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+  }
+
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.01em;
+  }
+
+  p {
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  p strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* ── About ── */
+  #about p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    max-width: 620px;
+  }
+
+  /* ── Interests grid ── */
+  .interest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .interest-item {
+    padding: 1.6rem 1.8rem;
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    transition: border-color 0.2s, background 0.2s;
+    cursor: default;
+  }
+  .interest-item:hover {
+    border-color: var(--gold-dim);
+    background: #161512;
+  }
+
+  .interest-symbol {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    color: var(--gold-dim);
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+
+  .interest-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .interest-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Topics list ── */
+  .topic-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .topic-row:last-child { border-bottom: none; }
+
+  .topic-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--gold-dim);
+    min-width: 2rem;
+    flex-shrink: 0;
+  }
+
+  .topic-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text);
+    flex: 1;
+  }
+
+  .topic-note {
+    font-size: 0.82rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Contact ── */
+  #contact p {
+    font-size: 1.05rem;
+    max-width: 520px;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .contact-link:hover { opacity: 0.7; }
+
+  .contact-link-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .contact-link-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--faint);
+    text-transform: uppercase;
+  }
+
+  .footer-right {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--faint);
+  }
+
+  /* ── Decorative rule ── */
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0;
+  }
+  .ornament::before, .ornament::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .ornament span {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold-dim);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .interest-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    h1 { font-size: 2.8rem; }
+    footer { flex-direction: column; gap: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="#hero">Your Name</a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#interests">interests</a></li>
+    <li><a href="#topics">coursework</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+
+  <!-- Hero -->
+  <section id="hero">
+    <p class="hero-eyebrow">Mathematics · Dartmouth College</p>
+    <h1>Your<br><em>Name</em></h1>
+    <p class="hero-subtitle">Undergraduate in Mathematics</p>
+    <p class="hero-tagline">
+      Drawn to the spaces where rigor and intuition converge —
+      complex analysis, real analysis, and the deep structure
+      underlying classical mathematics.
+    </p>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am an undergraduate student at Dartmouth College studying mathematics,
+      with a focus on analysis and mathematical physics. My approach to mathematics
+      prioritizes <strong>motivated exposition</strong> — understanding not merely
+      the what, but the why behind every definition and theorem.
+    </p>
+    <p>
+      I am particularly fascinated by the interplay between algebraic structure
+      and topology: how the fundamental group of the punctured plane governs
+      analytic continuation, or how determinant theory encodes the orientability
+      of manifolds. I find these bridges between subfields to be among the most
+      beautiful phenomena in mathematics.
+    </p>
+    <p>
+      Outside of coursework I enjoy working through proofs at the level of full
+      rigor, building comprehensive notes that connect definitions to their
+      functional roles in theorems.
+    </p>
+  </section>
+
+  <!-- Interests -->
+  <section id="interests">
+    <h2>Research Interests</h2>
+    <div class="interest-grid">
+
+      <div class="interest-item">
+        <span class="interest-symbol">ℂ</span>
+        <div class="interest-title">Complex Analysis</div>
+        <p class="interest-desc">
+          Branch cuts, Riemann surfaces, monodromy, and the topology of analytic continuation. The geometry underlying holomorphic maps.
+        </p>
+      </div>
+
+      <div class="interest-item">
+        <span class="interest-symbol">ℝ</span>
+        <div class="interest-title">Real Analysis</div>
+        <p class="interest-desc">
+          Measure theory, uniform convergence, and the rigorous foundations that underpin classical calculus and modern analysis.
+        </p>
+      </div>
+
+      <div class="interest-item">
+        <span class="interest-symbol">∂</span>
+        <div class="interest-title">Differential Equations</div>
+        <p class="interest-desc">
+          ODEs via matrix exponentials and Jordan theory; PDEs through separation, Fourier analysis, and operator-theoretic methods.
+        </p>
+      </div>
+
+      <div class="interest-item">
+        <span class="interest-symbol">π₁</span>
+        <div class="interest-title">Topology & Algebra</div>
+        <p class="interest-desc">
+          Fundamental groups, covering spaces, and the structural interplay between topology and linear algebra — GL<sub>n</sub>(ℝ), orientation, degree.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Coursework / Topics -->
+  <section id="topics">
+    <h2>Selected Topics</h2>
+
+    <div class="topic-row">
+      <span class="topic-num">01</span>
+      <span class="topic-name">Complex Analysis</span>
+      <span class="topic-note">in progress</span>
+    </div>
+    <div class="topic-row">
+      <span class="topic-num">02</span>
+      <span class="topic-name">Real Analysis</span>
+      <span class="topic-note">in progress</span>
+    </div>
+    <div class="topic-row">
+      <span class="topic-num">03</span>
+      <span class="topic-name">Ordinary Differential Equations</span>
+      <span class="topic-note">completed</span>
+    </div>
+    <div class="topic-row">
+      <span class="topic-num">04</span>
+      <span class="topic-name">Partial Differential Equations</span>
+      <span class="topic-note">completed</span>
+    </div>
+    <div class="topic-row">
+      <span class="topic-num">05</span>
+      <span class="topic-name">Linear Algebra</span>
+      <span class="topic-note">completed</span>
+    </div>
+    <div class="topic-row">
+      <span class="topic-num">06</span>
+      <span class="topic-name">Mathematical Physics</span>
+      <span class="topic-note">completed</span>
+    </div>
+
+    <div class="ornament"><span>§</span></div>
+
+    <p>
+      My coursework emphasizes proof-based mathematics at the graduate level.
+      I maintain detailed typeset notes in LaTeX for each major course,
+      written in a style that prioritizes explicit invocations of every
+      theorem and structural analogy between topics.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      I welcome correspondence on mathematics, potential collaborations,
+      or reading recommendations. The best way to reach me is by email.
+    </p>
+
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:your.email@dartmouth.edu">
+        <span class="contact-link-label">Email</span>
+        <span class="contact-link-value">your.email@dartmouth.edu</span>
+      </a>
+      <a class="contact-link" href="https://github.com/yourusername" target="_blank" rel="noopener">
+        <span class="contact-link-label">GitHub</span>
+        <span class="contact-link-value">yourusername</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-left">Dartmouth College &mdash; Mathematics</span>
+    <span class="footer-right">Mathematics is the art of giving the same name to different things.</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
