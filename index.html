@@ -20,23 +20,22 @@
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="coursework.html" class="nav-link">Academic Record</a></li>
+        <li><a href="#notes" class="nav-link">Notes</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- Hero — portrait left, text right -->
+<!-- Hero -->
 <section class="hero" id="hero">
   <div class="container">
     <div class="hero-grid">
-
       <div class="hero-visual">
         <div class="portrait-frame">
           <img src="images/david.jpg" alt="David Mukuruva">
         </div>
       </div>
-
       <div class="hero-content">
         <div class="hero-badges">
           <span class="hero-badge">Published · JMM 2025</span>
@@ -54,7 +53,6 @@
           <a href="#contact" class="btn btn-secondary">Get in touch</a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -119,16 +117,41 @@
   </div>
 </section>
 
-<!-- Projects -->
+<!-- Projects — SVG animated card visuals -->
 <section class="projects" id="projects">
   <div class="container">
     <span class="section-label" data-animate>Projects</span>
     <h2 class="section-title" data-animate style="--anim-delay: 0.05s">What I have built</h2>
     <div class="work-grid">
 
+      <!-- Aleph-Nought: animated function curve on coordinate axes -->
       <article class="work-card" data-animate style="--anim-delay: 0s">
-        <div class="work-image bg-math">
-          <span class="work-image-label">א₀</span>
+        <div class="work-image">
+          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="320" height="180" fill="#f9f9f9"/>
+            <!-- Fine grid -->
+            <line x1="0" y1="45" x2="320" y2="45" stroke="#ebebeb" stroke-width="1"/>
+            <line x1="0" y1="90" x2="320" y2="90" stroke="#ddd" stroke-width="1"/>
+            <line x1="0" y1="135" x2="320" y2="135" stroke="#ebebeb" stroke-width="1"/>
+            <line x1="80" y1="0" x2="80" y2="180" stroke="#ebebeb" stroke-width="1"/>
+            <line x1="160" y1="0" x2="160" y2="180" stroke="#ddd" stroke-width="1"/>
+            <line x1="240" y1="0" x2="240" y2="180" stroke="#ebebeb" stroke-width="1"/>
+            <!-- Axes -->
+            <line x1="30" y1="155" x2="295" y2="155" stroke="#bbb" stroke-width="1.5"/>
+            <line x1="50" y1="170" x2="50" y2="20" stroke="#bbb" stroke-width="1.5"/>
+            <!-- Arrow heads -->
+            <polygon points="295,152 303,155 295,158" fill="#bbb"/>
+            <polygon points="47,20 50,12 53,20" fill="#bbb"/>
+            <!-- Animated curve: polynomial/sinusoidal blend -->
+            <path d="M 55,145 C 90,140 110,50 160,95 C 205,135 235,45 285,40"
+                  fill="none" stroke="#0c0c0c" stroke-width="2.5"
+                  stroke-linecap="round"
+                  class="card-curve"/>
+            <!-- Dot at end -->
+            <circle cx="285" cy="40" r="4" fill="#0c0c0c" class="card-curve-dot"/>
+            <!-- f(x) label -->
+            <text x="258" y="34" font-family="Georgia,serif" font-size="14" fill="#0c0c0c" font-style="italic" class="card-curve-dot">f (x)</text>
+          </svg>
         </div>
         <div class="work-info">
           <span class="work-category">in progress</span>
@@ -144,9 +167,26 @@
         </div>
       </article>
 
+      <!-- Qublitz: animated scrolling waveform (quantum oscillation) -->
       <article class="work-card" data-animate style="--anim-delay: 0.1s">
-        <div class="work-image bg-quantum">
-          <span class="work-image-label">|ψ⟩</span>
+        <div class="work-image">
+          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" overflow="hidden" aria-hidden="true">
+            <rect width="320" height="180" fill="#f8f8f8"/>
+            <!-- Baseline -->
+            <line x1="0" y1="90" x2="320" y2="90" stroke="#e8e8e8" stroke-width="1"/>
+            <!-- Moving primary wave: period 88px, starts left of view -->
+            <g class="card-wave">
+              <path d="M-176,90 C-154,46 -132,134 -110,90 C-88,46 -66,134 -44,90 C-22,46 0,134 22,90 C44,46 66,134 88,90 C110,46 132,134 154,90 C176,46 198,134 220,90 C242,46 264,134 286,90 C308,46 330,134 352,90 C374,46 396,134 418,90 C440,46 462,134 484,90"
+                    fill="none" stroke="#0c0c0c" stroke-width="2.5" stroke-linecap="round"/>
+            </g>
+            <!-- Phase-shifted fainter second wave -->
+            <g class="card-wave-soft">
+              <path d="M-176,90 C-154,62 -132,118 -110,90 C-88,62 -66,118 -44,90 C-22,62 0,118 22,90 C44,62 66,118 88,90 C110,62 132,118 154,90 C176,62 198,118 220,90 C242,62 264,118 286,90 C308,62 330,118 352,90 C374,62 396,118 418,90 C440,62 462,118 484,90"
+                    fill="none" stroke="#bbb" stroke-width="1.5" stroke-linecap="round"/>
+            </g>
+            <!-- |ψ⟩ label -->
+            <text x="262" y="32" font-family="Georgia,serif" font-size="22" fill="rgba(0,0,0,0.12)" font-style="italic">|ψ⟩</text>
+          </svg>
         </div>
         <div class="work-info">
           <span class="work-category">in progress · unitary fund</span>
@@ -161,9 +201,21 @@
         </div>
       </article>
 
+      <!-- InfantAir: expanding pressure rings -->
       <article class="work-card" data-animate style="--anim-delay: 0.2s">
-        <div class="work-image bg-eng">
-          <span class="work-image-label">InfantAir</span>
+        <div class="work-image">
+          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="320" height="180" fill="#f9f9f9"/>
+            <!-- Pressure rings centered -->
+            <g transform="translate(160,90)">
+              <circle cx="0" cy="0" r="6" fill="#0c0c0c"/>
+              <circle cx="0" cy="0" r="18" fill="none" stroke="#0c0c0c" stroke-width="1.5" class="card-ring-a"/>
+              <circle cx="0" cy="0" r="18" fill="none" stroke="#0c0c0c" stroke-width="1.5" class="card-ring-b"/>
+              <circle cx="0" cy="0" r="18" fill="none" stroke="#0c0c0c" stroke-width="1.5" class="card-ring-c"/>
+            </g>
+            <!-- Label -->
+            <text x="184" y="55" font-family="Georgia,serif" font-size="13" fill="rgba(0,0,0,0.15)" font-style="italic">ΔP</text>
+          </svg>
         </div>
         <div class="work-info">
           <span class="work-category">Apr – Jun 2025</span>
@@ -177,9 +229,33 @@
         </div>
       </article>
 
+      <!-- Drug Design: slowly rotating molecular diagram -->
       <article class="work-card" data-animate style="--anim-delay: 0.3s">
-        <div class="work-image bg-bio">
-          <span class="work-image-label">Rx</span>
+        <div class="work-image">
+          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="320" height="180" fill="#f8f8f8"/>
+            <g transform="translate(160,90)">
+              <g class="card-molecule">
+                <!-- Bonds -->
+                <line x1="0" y1="0" x2="52" y2="0"  stroke="#ccc" stroke-width="2"/>
+                <line x1="0" y1="0" x2="-26" y2="45" stroke="#ccc" stroke-width="2"/>
+                <line x1="0" y1="0" x2="-26" y2="-45"stroke="#ccc" stroke-width="2"/>
+                <line x1="0" y1="0" x2="30" y2="-48" stroke="#ccc" stroke-width="2"/>
+                <line x1="0" y1="0" x2="26" y2="45"  stroke="#ccc" stroke-width="2"/>
+                <!-- Double bond -->
+                <line x1="4" y1="-4" x2="52" y2="-4" stroke="#ddd" stroke-width="1"/>
+                <!-- Peripheral atoms -->
+                <circle cx="52"  cy="0"  r="8"  fill="#666"/>
+                <circle cx="-26" cy="45" r="7"  fill="#777"/>
+                <circle cx="-26" cy="-45"r="7"  fill="#666"/>
+                <circle cx="30"  cy="-48"r="6"  fill="#888"/>
+                <circle cx="26"  cy="45" r="6"  fill="#888"/>
+                <!-- Central atom -->
+                <circle cx="0"   cy="0"  r="10" fill="#0c0c0c"/>
+              </g>
+            </g>
+            <text x="240" y="42" font-family="Georgia,serif" font-size="13" fill="rgba(0,0,0,0.14)" font-style="italic">Rx</text>
+          </svg>
         </div>
         <div class="work-info">
           <span class="work-category">Sep – Nov 2024</span>
@@ -197,6 +273,79 @@
   </div>
 </section>
 
+<!-- Resume & CV Downloads -->
+<!-- Place PDFs at: assets/david-mukuruva-resume.pdf and assets/david-mukuruva-cv.pdf -->
+<section class="download-section" id="documents">
+  <div class="container">
+    <span class="section-label" data-animate>Documents</span>
+    <h2 class="section-title" data-animate style="--anim-delay: 0.05s">Curriculum Vitae &amp; Résumé</h2>
+    <div class="download-grid">
+
+      <a href="assets/david-mukuruva-cv.pdf" class="download-card" data-animate style="--anim-delay: 0s" download>
+        <span class="download-type">Full Academic Record</span>
+        <h3>Curriculum Vitae</h3>
+        <p>Research, publications, teaching, coursework, and service — the complete record for academic and research applications.</p>
+        <span class="download-cta">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </span>
+      </a>
+
+      <a href="assets/david-mukuruva-resume.pdf" class="download-card" data-animate style="--anim-delay: 0.1s" download>
+        <span class="download-type">One Page</span>
+        <h3>Résumé</h3>
+        <p>A condensed version for industry, internship, and fellowship applications — highlights and impact, distilled to a single page.</p>
+        <span class="download-cta">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Personal Asides — Dana Williams-style personal section -->
+<section class="asides" id="notes">
+  <div class="container">
+    <span class="section-label" data-animate>Other Matters</span>
+    <h2 class="section-title" data-animate style="--anim-delay: 0.05s">Notes from the Margin</h2>
+    <p class="asides-intro" data-animate style="--anim-delay: 0.1s">Not everything worth saying fits into a CV. A few observations, in no particular order.</p>
+
+    <div class="aside-grid">
+
+      <div class="aside" data-animate style="--anim-delay: 0s">
+        <h3>On dual-majoring</h3>
+        <p>People occasionally ask whether mathematics and biomedical engineering are a strange combination. I have found that they share more vocabulary than either field typically acknowledges — "convergence," "structure," "stability" — and that mathematicians and biologists mean entirely different things by each. This is, I think, a feature rather than a problem.</p>
+      </div>
+
+      <div class="aside" data-animate style="--anim-delay: 0.08s">
+        <h3>On archery</h3>
+        <p>I shoot recurve bow as part of Dartmouth's archery program. This is, reliably, the most surprising thing I tell people about myself. I have not yet determined whether that says more about archery, about Dartmouth, or about what people expect of mathematics students.</p>
+      </div>
+
+      <div class="aside" data-animate style="--anim-delay: 0.16s">
+        <h3>On teaching introductory physics while studying functional analysis</h3>
+        <p>There is something clarifying about being, simultaneously, a student of Banach algebras and a TA for introductory mechanics. It is a useful reminder that understanding and the ability to explain are not the same thing — and that the distance between them is where most of the actual teaching happens.</p>
+      </div>
+
+      <!-- Placeholder: fill these in with your own asides -->
+      <div class="aside aside-placeholder" data-animate style="--anim-delay: 0.24s">
+        <p>[ Add your own aside here — a brief observation, anecdote, or non-academic note in your voice. Dana Williams-style: dry, specific, honest. ]</p>
+      </div>
+
+      <div class="aside aside-placeholder" data-animate style="--anim-delay: 0.32s">
+        <p>[ Another note — perhaps on something you are currently reading, learning, or thinking about that does not fit neatly elsewhere. ]</p>
+      </div>
+
+      <div class="aside aside-placeholder" data-animate style="--anim-delay: 0.4s">
+        <p>[ A third space — for a hobby, a confession, an observation about Dartmouth, or anything else that humanizes the rest of this page. ]</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- Contact -->
 <section class="contact" id="contact">
   <div class="container">
@@ -207,23 +356,16 @@
         <p>I am open to research collaborations, internship conversations, and any problem interesting enough to be worth solving together.</p>
         <p class="contact-detail">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
           </svg>
           david.d.mukuruva.ii.27@dartmouth.edu
         </p>
         <div class="social-links">
           <a href="https://linkedin.com/in/David" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
           <a href="https://github.com/dmukuruva-creator" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           </a>
         </div>
       </div>
@@ -239,11 +381,16 @@
   </div>
 </section>
 
-<!-- Footer -->
+<!-- Footer with attribution -->
 <footer class="footer">
-  <div class="container footer-content">
-    <p class="footer-quote">He uses statistics like a drunk man uses a lamppost; more for support than illumination — Andrew Lang</p>
-    <p class="footer-copy">© 2026 David Mukuruva</p>
+  <div class="container">
+    <div class="footer-content">
+      <p class="footer-quote">He uses statistics like a drunk man uses a lamppost; more for support than illumination — Andrew Lang</p>
+      <p class="footer-copy">© 2026 David Mukuruva</p>
+    </div>
+    <div class="footer-attribution">
+      <p>This site was developed with inspiration from the personal pages of <a href="https://math.dartmouth.edu/~dana/other/" target="_blank" rel="noopener">Prof. Dana Williams</a> (Dartmouth Mathematics) and <a href="https://michaelrmontgomery.github.io" target="_blank" rel="noopener">Michael Montgomery</a> (Dartmouth Mathematics). Their willingness to be human on the internet is a model worth following.</p>
+    </div>
   </div>
 </footer>
 
