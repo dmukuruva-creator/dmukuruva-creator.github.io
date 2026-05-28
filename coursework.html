@@ -1,221 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coursework — David Mukuruva</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Record — David Mukuruva</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-
-<nav>
-  <div class="nav-inner">
-    <a class="nav-left" href="index.html">
-      <div class="nav-avatar">DM</div>
-      <span class="nav-name">David Mukuruva</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Experience</a></li>
-      <li><a href="coursework.html" class="active">Coursework</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">David Mukuruva</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="coursework.html" class="nav-link">Academic Record</a></li>
+        <li><a href="notes.html" class="nav-link">Notes</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
 
-<main class="wrap">
-  <section id="coursework">
-    <p class="section-label">// Coursework</p>
+<!-- Page Header -->
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">Dartmouth College · Class of 2027</span>
+    <h1>Academic Record</h1>
+    <p>Mathematics &amp; Biomedical Engineering — double major</p>
+  </div>
+</div>
 
-    <div class="cw-group" style="margin-top: 0;">Mathematics</div>
+<!-- Research & Teaching -->
+<section class="experience" id="experience">
+  <div class="container">
+    <span class="section-label" data-animate>Research &amp; Teaching</span>
+    <h2 class="section-title" data-animate style="--anim-delay: 0.05s">Where the work has taken me</h2>
+    <div class="exp-grid">
 
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">MATH 113: Analysis (Graduate)</div>
-        <div class="exp-place">Banach spaces, Hilbert spaces, Banach algebras</div>
+      <div class="exp-card" data-animate style="--anim-delay: 0s">
+        <div class="exp-card-header">
+          <h3 class="exp-card-title">Physics Teaching Assistant</h3>
+          <span class="exp-card-date">Apr 2025 – present</span>
+        </div>
+        <p class="exp-card-place">Dartmouth College · Physics Department</p>
+        <ul class="exp-bullets">
+          <li>Facilitate 10 weekly labs across 4 intro physics courses, guiding 40+ students</li>
+          <li>Designed the curriculum for Dartmouth's Emerging Engineers physics support program; serve as lead tutor</li>
+          <li>Weekly office hours serving 8–12 students; improved median assessment scores by 28%</li>
+          <li>Grade prelabs and deliver instructional feedback within 48 hours</li>
+        </ul>
       </div>
-      <div class="exp-date">in progress</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">MATH 60: Probability (Honors)</div>
-        <div class="exp-place">Theoretical probability, continuous distributions</div>
-      </div>
-      <div class="exp-date">in progress</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">MATH 43: Complex Variables</div>
-        <div class="exp-place">Cauchy's theorem, residue calculus, conformal mapping</div>
-      </div>
-      <div class="exp-date">in progress</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">MATH 63: Real Analysis (Honors)</div>
-        <div class="exp-place">Metric spaces, integration theory, uniform convergence</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">MATH 24: Linear Algebra (Honors)</div>
-        <div class="exp-place">Abstract vector spaces, theory and proof</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">MATH 23: Differential Equations</div>
-        <div class="exp-place">ODEs, PDEs, Fourier series, numerical methods</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">MATH 13: Calculus of Vector-Valued Functions</div>
-        <div class="exp-place">Multivariable integration, vector fields, Stokes' theorem</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">MATH 08: Calculus of One and Several Variables</div>
-        <div class="exp-place">Series, partial derivatives, Lagrange multipliers</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
 
-    <div class="cw-group">Engineering</div>
+      <div class="exp-card" data-animate style="--anim-delay: 0.1s">
+        <div class="exp-card-header">
+          <h3 class="exp-card-title">Polymath Jr — Research Assistant</h3>
+          <span class="exp-card-date">Jun – Aug 2025</span>
+        </div>
+        <p class="exp-card-place">Mathematics Research Program</p>
+        <ul class="exp-bullets">
+          <li>Investigated an open problem in <em>Finding Ellipses</em> — a question at the intersection of linear algebra, complex analysis, and classical geometry</li>
+          <li>Developed a MATLAB applet to analyze 6-dimensional datasets characterizing mathematical objects; automated data generation, reducing pipeline time by 85%</li>
+          <li>Presented <a href="https://meetings.ams.org/math/jmm2026/meetingapp.cgi/Paper/57312" target="_blank" rel="noopener"><em>Finding Ellipses: Blaschke Products, Poncelet's Theorem, and the Numerical Range</em> ↗</a> — Joint Mathematics Meetings 2026</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">MATLAB</span>
+          <span class="tag">linear algebra</span>
+          <span class="tag">complex analysis</span>
+          <span class="tag">JMM 2026</span>
+        </div>
+      </div>
 
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">ENGS 23: Distributed Systems and Fields</div>
-        <div class="exp-place">Vector fields, conservation laws, transport processes</div>
+      <div class="exp-card" data-animate style="--anim-delay: 0.2s">
+        <div class="exp-card-header">
+          <h3 class="exp-card-title">Thayer School — Research Assistant</h3>
+          <span class="exp-card-date">Jan – Sep 2024</span>
+        </div>
+        <p class="exp-card-place">Goods Lab · Cancer Genomics</p>
+        <ul class="exp-bullets">
+          <li>Analyzed single-cell RNA sequencing data from 3 patients with gynecological cancers using R</li>
+          <li>Cross-referenced 11 distinct cell identities with Enrichr and patient metadata to identify disease biomarkers</li>
+          <li>Elucidated 800+ diseased cell signaling pathways via Seurat, Cellchat, and Bioconductor</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">R</span>
+          <span class="tag">Seurat</span>
+          <span class="tag">scRNA-seq</span>
+          <span class="tag">Bioconductor</span>
+        </div>
       </div>
-      <div class="exp-date">in progress</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">ENGS 56: Introduction to Biomedical Engineering</div>
-        <div class="exp-place">Bioinstrumentation, biomechanics, biomaterials</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">ENGS 53: Introduction to Quantum Technologies</div>
-        <div class="exp-place">Quantum sensing, communication, and computation</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">ENGS 35: Biotechnology &amp; Biochemical Engineering</div>
-        <div class="exp-place">Enzyme kinetics, recombinant DNA, bioseparations</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">ENGS 22: Systems</div>
-        <div class="exp-place">Lumped system modeling, ODEs, MATLAB</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">ENGS 21: Introduction to Engineering</div>
-        <div class="exp-place">Team-based design project from concept to prototype</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">ENGS 20: Introduction to Scientific Computing</div>
-        <div class="exp-place">C programming, numerical methods, data structures</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
 
-    <div class="cw-group">Sciences</div>
 
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">PHYS 15 &amp; 16: Introductory Physics I &amp; II (Honors)</div>
-        <div class="exp-place">Classical mechanics, E&amp;M, special relativity, quantum intro</div>
+      <div class="exp-card" data-animate style="--anim-delay: 0.3s">
+        <div class="exp-card-header">
+          <h3 class="exp-card-title">Directed Reading Program</h3>
+          <span class="exp-card-date">Spring 2026</span>
+        </div>
+        <p class="exp-card-place">Dartmouth Mathematics Department</p>
+        <ul class="exp-bullets">
+          <li>Independent study in Combinatorial Game Theory under the mentorship of Michaela Polley</li>
+          <li>Explored winning strategies in perfect-information games — a bridge between combinatorics, logic, and classical game theory</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">combinatorics</span>
+          <span class="tag">game theory</span>
+          <span class="tag">independent study</span>
+        </div>
       </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">BIOL 13: Gene Expression and Inheritance</div>
-        <div class="exp-place">Molecular genetics, DNA to protein, gene regulation</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">BIOL 12: Cell Structure and Function</div>
-        <div class="exp-place">Membrane transport, signal transduction, cell cycle</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">CHEM 51: Organic Chemistry I</div>
-        <div class="exp-place">Reaction mechanisms, synthesis, spectroscopy</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">CHEM 11: General Chemistry</div>
-        <div class="exp-place">Thermodynamics, kinetics, electrochemistry, bonding</div>
-      </div>
-      <div class="exp-date">completed</div>
-    </div>
 
-    <div class="cw-group">Humanities &amp; Other</div>
-
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">WRIT 02, 03, 07.38 · SPEE 20</div>
-        <div class="exp-place">Composition, research writing, public speaking</div>
-      </div>
-      <div class="exp-date">completed</div>
     </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">JAPN 01 · ASCL 60.26 · ASCL 60.20</div>
-        <div class="exp-place">Japanese, contemporary Japan, gender/class/nation</div>
+  </div>
+</section>
+
+<!-- Coursework -->
+<section class="coursework-section">
+  <div class="container">
+    <span class="section-label" data-animate>Coursework</span>
+    <h2 class="section-title" data-animate style="--anim-delay: 0.05s">What I have studied</h2>
+
+    <div data-animate style="--anim-delay: 0.1s">
+
+      <div class="cw-group">Mathematics</div>
+
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">MATH 113: Analysis (Graduate)</div>
+          <div class="cw-desc">Banach spaces, Hilbert spaces, Banach algebras</div>
+        </div>
+        <span class="cw-badge">in progress</span>
       </div>
-      <div class="exp-date">completed</div>
-    </div>
-
-    <div class="cw-group">Directed Reading Program</div>
-
-    <div class="exp-row">
-      <div>
-        <div class="exp-title">Combinatorial Game Theory</div>
-        <div class="exp-place">Mentor: Michaela Polley · winning strategies in perfect-information games</div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">MATH 60: Probability (Honors)</div>
+          <div class="cw-desc">Theoretical probability, continuous distributions</div>
+        </div>
+        <span class="cw-badge">in progress</span>
       </div>
-      <div class="exp-date">Spring 2026</div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">MATH 43: Complex Variables</div>
+          <div class="cw-desc">Cauchy's theorem, residue calculus, conformal mapping</div>
+        </div>
+        <span class="cw-badge">in progress</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">MATH 63: Real Analysis (Honors)</div>
+          <div class="cw-desc">Metric spaces, integration theory, uniform convergence</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">MATH 24: Linear Algebra (Honors)</div>
+          <div class="cw-desc">Abstract vector spaces, theory and proof</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">MATH 23: Differential Equations</div>
+          <div class="cw-desc">ODEs, PDEs, Fourier series, numerical methods</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">MATH 13: Calculus of Vector-Valued Functions</div>
+          <div class="cw-desc">Multivariable integration, vector fields, Stokes' theorem</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">MATH 08: Calculus of One and Several Variables</div>
+          <div class="cw-desc">Series, partial derivatives, Lagrange multipliers</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+
+      <div class="cw-group">Engineering</div>
+
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">ENGS 23: Distributed Systems and Fields</div>
+          <div class="cw-desc">Vector fields, conservation laws, transport processes</div>
+        </div>
+        <span class="cw-badge">in progress</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">ENGS 56: Introduction to Biomedical Engineering</div>
+          <div class="cw-desc">Bioinstrumentation, biomechanics, biomaterials</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">ENGS 53: Introduction to Quantum Technologies</div>
+          <div class="cw-desc">Quantum sensing, communication, and computation</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">ENGS 35: Biotechnology &amp; Biochemical Engineering</div>
+          <div class="cw-desc">Enzyme kinetics, recombinant DNA, bioseparations</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">ENGS 22: Systems</div>
+          <div class="cw-desc">Lumped system modeling, ODEs, MATLAB</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">ENGS 21: Introduction to Engineering</div>
+          <div class="cw-desc">Team-based design project from concept to prototype</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">ENGS 20: Introduction to Scientific Computing</div>
+          <div class="cw-desc">C programming, numerical methods, data structures</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+
+      <div class="cw-group">Sciences</div>
+
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">PHYS 15 &amp; 16: Introductory Physics I &amp; II (Honors)</div>
+          <div class="cw-desc">Classical mechanics, E&amp;M, special relativity, quantum intro</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">BIOL 13: Gene Expression and Inheritance</div>
+          <div class="cw-desc">Molecular genetics, DNA to protein, gene regulation</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">BIOL 12: Cell Structure and Function</div>
+          <div class="cw-desc">Membrane transport, signal transduction, cell cycle</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">CHEM 51: Organic Chemistry I</div>
+          <div class="cw-desc">Reaction mechanisms, synthesis, spectroscopy</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">CHEM 11: General Chemistry</div>
+          <div class="cw-desc">Thermodynamics, kinetics, electrochemistry, bonding</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+
+      <div class="cw-group">Humanities &amp; Other</div>
+
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">WRIT 02, 03, 07.38 · SPEE 20</div>
+          <div class="cw-desc">Composition, research writing, public speaking</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">JAPN 01 · ASCL 60.26 · ASCL 60.20</div>
+          <div class="cw-desc">Japanese, contemporary Japan, gender/class/nation</div>
+        </div>
+        <span class="cw-badge done">completed</span>
+      </div>
+
+      <div class="cw-group">Directed Reading Program</div>
+
+      <div class="cw-row">
+        <div>
+          <div class="cw-title">Combinatorial Game Theory</div>
+          <div class="cw-desc">Mentor: Michaela Polley · winning strategies in perfect-information games</div>
+        </div>
+        <span class="cw-badge">Spring 2026</span>
+      </div>
+
     </div>
+  </div>
+</section>
 
-  </section>
-</main>
-
-<footer>
-  <div class="footer-inner">
-    <span class="footer-left">He uses statistics like a drunk man uses a lamppost; more for support than illumination - Andrew Lang</span>
-    <span class="terminal-prompt">visitor@yourname:~$&nbsp;<span class="cursor"></span></span>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p class="footer-quote">He uses statistics like a drunk man uses a lamppost; more for support than illumination — Andrew Lang</p>
+      <p class="footer-copy">© 2026 David Mukuruva</p>
+    </div>
+    <div class="footer-attribution">
+      <p>This site was developed with inspiration from the personal pages of <a href="https://math.dartmouth.edu/~dana/other/" target="_blank" rel="noopener">Prof. Dana Williams</a> (Dartmouth Mathematics) and <a href="https://michaelrmontgomery.github.io" target="_blank" rel="noopener">Michael Montgomery</a> (Dartmouth Mathematics). Their willingness to be human on the internet is a model worth following.</p>
+    </div>
   </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
