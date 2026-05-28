@@ -44,51 +44,70 @@
 
     Copy and paste this block anywhere in the list:
 
-      <div class="note-entry">
-        <h3>Optional title</h3>
-        <p>Your note here. Can be as short or as long as you like.
-           Multiple <p> tags are fine for longer entries.</p>
-      </div>
+      <details class="note-entry">
+        <summary class="note-title">Your title here</summary>
+        <div class="note-body">
+          <p>Your note here. Can be as short or as long as you like.
+             Multiple <p> tags are fine for longer entries.</p>
+        </div>
+      </details>
       <hr class="note-rule">
 
-    The <h3> is optional — delete it if you just want a paragraph.
+    Add the "open" attribute to <details> if you want it expanded by default:
+      <details class="note-entry" open>
+
     No dates, no categories, no order required.
     ═══════════════════════════════════════════════════════
     -->
 
-    <div class="note-entry">
-      <h3>On dual-majoring</h3>
-      <p>People occasionally ask whether mathematics and biomedical engineering are a strange combination. I have found that they share more vocabulary than either field typically acknowledges — "convergence," "structure," "stability" — and that mathematicians and biologists mean entirely different things by each word. This is, I think, a feature rather than a problem.</p>
-    </div>
+    <details class="note-entry" open>
+      <summary class="note-title">On dual-majoring</summary>
+      <div class="note-body">
+        <p>People occasionally ask whether mathematics and biomedical engineering are a strange combination. I have found that they share more vocabulary than either field typically acknowledges — "convergence," "structure," "stability" — and that mathematicians and biologists mean entirely different things by each word. This is, I think, a feature rather than a problem.</p>
+      </div>
+    </details>
     <hr class="note-rule">
 
-    <div class="note-entry">
-      <h3>On archery</h3>
-      <p>I shoot recurve bow as part of Dartmouth's archery program. This is, reliably, the most surprising thing I tell people about myself. I have not yet determined whether that says more about archery, about Dartmouth, or about what people expect of mathematics students.</p>
-    </div>
+    <details class="note-entry">
+      <summary class="note-title">On archery</summary>
+      <div class="note-body">
+        <p>I shoot recurve bow as part of Dartmouth's archery program. This is, reliably, the most surprising thing I tell people about myself. I have not yet determined whether that says more about archery, about Dartmouth, or about what people expect of mathematics students.</p>
+      </div>
+    </details>
     <hr class="note-rule">
 
-    <div class="note-entry">
-      <h3>On teaching introductory physics while studying functional analysis</h3>
-      <p>There is something clarifying about being, simultaneously, a student of Banach algebras and a TA for introductory mechanics. It is a useful reminder that understanding and the ability to explain are not the same thing — and that the distance between them is where most of the actual teaching happens.</p>
-    </div>
+    <details class="note-entry">
+      <summary class="note-title">On teaching introductory physics while studying functional analysis</summary>
+      <div class="note-body">
+        <p>There is something clarifying about being, simultaneously, a student of Banach algebras and a TA for introductory mechanics. It is a useful reminder that understanding and the ability to explain are not the same thing — and that the distance between them is where most of the actual teaching happens.</p>
+      </div>
+    </details>
     <hr class="note-rule">
 
     <!-- ↓ Your notes go here — copy the block above and fill it in -->
 
-    <div class="note-placeholder">
-      <p>[ Add a note here — an observation, an anecdote, something you are reading, a confession, a hobby, or anything else that does not fit neatly on the main page. ]</p>
-    </div>
+    <details class="note-entry note-placeholder">
+      <summary class="note-title">[ untitled ]</summary>
+      <div class="note-body">
+        <p>[ Add a note here — an observation, an anecdote, something you are reading, a confession, a hobby, or anything else that does not fit neatly on the main page. ]</p>
+      </div>
+    </details>
     <hr class="note-rule">
 
-    <div class="note-placeholder">
-      <p>[ Another note. No title required. No particular length. ]</p>
-    </div>
+    <details class="note-entry note-placeholder">
+      <summary class="note-title">[ untitled ]</summary>
+      <div class="note-body">
+        <p>[ Another note. No title required. No particular length. ]</p>
+      </div>
+    </details>
     <hr class="note-rule">
 
-    <div class="note-placeholder">
-      <p>[ And another. This page has no structure beyond the order you choose to put things in. ]</p>
-    </div>
+    <details class="note-entry note-placeholder">
+      <summary class="note-title">[ untitled ]</summary>
+      <div class="note-body">
+        <p>[ And another. This page has no structure beyond the order you choose to put things in. ]</p>
+      </div>
+    </details>
 
   </div>
 </main>
