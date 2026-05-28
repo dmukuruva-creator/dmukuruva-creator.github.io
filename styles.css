@@ -484,6 +484,53 @@ section { padding: var(--space-xl) 0; }
 .cw-badge.done { border-color: var(--color-border); color: var(--color-text-faint); }
 
 /* ===========================
+   Notes Page
+   =========================== */
+.notes-section { padding: var(--space-lg) 0 var(--space-xl); }
+.notes-section > .container { max-width: 720px; }
+
+.note-entry { margin-bottom: 0; }
+.note-entry h3 {
+	font-family: var(--font-serif);
+	font-size: 1.125rem;
+	font-style: italic;
+	font-weight: 400;
+	margin-bottom: 0.5rem;
+	letter-spacing: -0.01em;
+}
+.note-entry p {
+	font-family: var(--font-serif);
+	font-size: 1.0625rem;
+	color: var(--color-text-light);
+	line-height: 1.85;
+	margin-bottom: 0.4rem;
+}
+.note-entry p:last-child { margin-bottom: 0; }
+
+.note-rule {
+	border: none;
+	border-top: 1px solid var(--color-border);
+	margin: var(--space-lg) 0;
+}
+
+.note-placeholder {
+	border: 1.5px dashed var(--color-border);
+	border-radius: var(--radius);
+	padding: var(--space-md) var(--space-md);
+	min-height: 100px;
+	display: flex;
+	align-items: center;
+}
+.note-placeholder p {
+	font-family: var(--font-sans);
+	font-size: 0.875rem;
+	color: var(--color-text-faint);
+	font-style: italic;
+	margin: 0;
+	line-height: 1.6;
+}
+
+/* ===========================
    Scroll Animations
    =========================== */
 @keyframes fadeUp {
