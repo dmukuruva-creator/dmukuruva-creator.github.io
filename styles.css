@@ -9,7 +9,7 @@
 	--color-bg-warm:     #fafaf8;
 	--color-text:        #0c0c0c;
 	--color-text-light:  #484848;
-	--color-text-faint:  #8a8a8a;
+	--color-text-faint:  #6e6e6e;
 	--color-border:      #d4d4d4;
 	--color-border-dark: #0c0c0c;
 	--color-white:       #ffffff;
@@ -258,6 +258,7 @@ section { padding: var(--space-xl) 0; }
 @media (min-width: 600px) { .cred-grid { grid-template-columns: repeat(4, 1fr); } }
 .cred-item { padding: 2rem 1.5rem; border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
 .cred-number { display: block; font-family: var(--font-serif); font-size: 3rem; font-weight: 400; color: var(--color-text); line-height: 1; margin-bottom: 0.5rem; letter-spacing: -0.03em; }
+.cred-credential { display: block; font-family: var(--font-serif); font-size: 1.6rem; font-weight: 400; color: var(--color-text); line-height: 1.1; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
 .cred-label { display: block; font-family: var(--font-sans); font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-faint); line-height: 1.7; }
 
 /* ===========================
@@ -272,6 +273,53 @@ section { padding: var(--space-xl) 0; }
 .skill-item { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.875rem 1rem; }
 .skill-label { font-family: var(--font-sans); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text-faint); margin-bottom: 0.3rem; }
 .skill-value { font-family: var(--font-sans); font-size: 0.8125rem; color: var(--color-text-light); line-height: 1.5; }
+
+/* ===========================
+   Research highlight
+   =========================== */
+.research { background: var(--color-bg); border-top: 1px solid var(--color-border); }
+.research-card {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-md);
+	background: var(--color-white);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius);
+	overflow: hidden;
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.research-card:hover { border-color: var(--color-black); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+.research-visual { background: #f8f8f8; }
+.research-visual svg { width: 100%; height: 100%; display: block; }
+.research-info { padding: var(--space-md); }
+.research-info h3 { font-family: var(--font-serif); font-size: 1.375rem; line-height: 1.25; margin-bottom: 0.6rem; }
+.research-info > p { font-family: var(--font-serif); color: var(--color-text-light); font-size: 0.9375rem; line-height: 1.75; margin-bottom: 0.75rem; }
+@media (min-width: 760px) {
+	.research-card { grid-template-columns: 300px 1fr; gap: 0; align-items: center; }
+	.research-visual { align-self: stretch; border-right: 1px solid var(--color-border); }
+	.research-info { padding: var(--space-md); }
+}
+
+/* Poncelet triangle slowly rotating inside the ellipse */
+@keyframes ponceletSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.research-poncelet { transform-box: view-box; transform-origin: 160px 120px; animation: ponceletSpin 22s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .research-poncelet { animation: none; } }
+
+/* ===========================
+   Notes teaser
+   =========================== */
+.notes-teaser { background: var(--color-bg-warm); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: var(--space-lg) 0; }
+.notes-teaser-text {
+	font-family: var(--font-serif);
+	font-size: 1.25rem;
+	font-style: italic;
+	line-height: 1.7;
+	color: var(--color-text-light);
+	max-width: 640px;
+	margin: 0;
+}
+.notes-teaser-text a { color: var(--color-text); text-decoration: underline; text-decoration-color: var(--color-border); text-underline-offset: 3px; }
+.notes-teaser-text a:hover { text-decoration-color: var(--color-black); opacity: 1; }
 
 /* ===========================
    Project Cards with SVG animations
