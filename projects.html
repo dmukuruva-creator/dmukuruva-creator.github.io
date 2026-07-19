@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — David Mukuruva</title>
+  <meta name="description" content="Projects by David Mukuruva — the Aleph-Nought learning platform, the QuBlitz Arena game, and Studium, a local-first AI study tool.">
+  <meta name="author" content="David Mukuruva">
+  <link rel="canonical" href="https://dmukuruva-creator.github.io/projects.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects — David Mukuruva">
+  <meta property="og:description" content="Aleph-Nought, QuBlitz Arena, and Studium — software David has built.">
+  <meta property="og:url" content="https://dmukuruva-creator.github.io/projects.html">
+  <meta property="og:image" content="https://dmukuruva-creator.github.io/images/david.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">David Mukuruva</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="index.html#research" class="nav-link">Research</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="coursework.html" class="nav-link">Academic Record</a></li>
+        <li><a href="notes.html" class="nav-link">Notes</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Page Header -->
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">Software</span>
+    <h1>Projects</h1>
+    <p>Things I have built — a learning platform, a physics game, and a local-first study tool.</p>
+  </div>
+</div>
+
+<section class="projects">
+  <div class="container">
+    <div class="work-grid">
+
+      <!-- Aleph-Nought: animated function curve on coordinate axes -->
+      <article class="work-card" data-animate style="--anim-delay: 0s">
+        <div class="work-image">
+          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="320" height="180" fill="#f9f9f9"/>
+            <line x1="0" y1="45" x2="320" y2="45" stroke="#ebebeb" stroke-width="1"/>
+            <line x1="0" y1="90" x2="320" y2="90" stroke="#ddd" stroke-width="1"/>
+            <line x1="0" y1="135" x2="320" y2="135" stroke="#ebebeb" stroke-width="1"/>
+            <line x1="80" y1="0" x2="80" y2="180" stroke="#ebebeb" stroke-width="1"/>
+            <line x1="160" y1="0" x2="160" y2="180" stroke="#ddd" stroke-width="1"/>
+            <line x1="240" y1="0" x2="240" y2="180" stroke="#ebebeb" stroke-width="1"/>
+            <line x1="30" y1="155" x2="295" y2="155" stroke="#bbb" stroke-width="1.5"/>
+            <line x1="50" y1="170" x2="50" y2="20" stroke="#bbb" stroke-width="1.5"/>
+            <polygon points="295,152 303,155 295,158" fill="#bbb"/>
+            <polygon points="47,20 50,12 53,20" fill="#bbb"/>
+            <path d="M 55,145 C 90,140 110,50 160,95 C 205,135 235,45 285,40"
+                  fill="none" stroke="#0c0c0c" stroke-width="2.5" stroke-linecap="round" class="card-curve"/>
+            <circle cx="285" cy="40" r="4" fill="#0c0c0c" class="card-curve-dot"/>
+            <text x="258" y="34" font-family="Georgia,serif" font-size="14" fill="#0c0c0c" font-style="italic" class="card-curve-dot">f (x)</text>
+          </svg>
+        </div>
+        <div class="work-info">
+          <span class="work-category">live · in active development</span>
+          <h3><a href="https://www.aleph-nought.com" target="_blank" rel="noopener">Aleph-Nought Learning Platform ↗</a></h3>
+          <p>A full-stack platform I built, with content covering six Dartmouth math and physics course syllabi. Its core is a symbolic exercise engine that parses and evaluates free-form mathematical expressions for automated grading, fed by a content pipeline I built (Manim-animated lectures, transcribed TA audio). Full-stack: Next.js, FastAPI, PostgreSQL, deployed to production.</p>
+          <div class="tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Manim</span>
+            <span class="tag">SymPy</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Qublitz: animated scrolling waveform (quantum oscillation) -->
+      <article class="work-card" data-animate style="--anim-delay: 0.1s">
+        <div class="work-image">
+          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" overflow="hidden" aria-hidden="true">
+            <rect width="320" height="180" fill="#f8f8f8"/>
+            <line x1="0" y1="90" x2="320" y2="90" stroke="#e8e8e8" stroke-width="1"/>
+            <g class="card-wave">
+              <path d="M-176,90 C-154,46 -132,134 -110,90 C-88,46 -66,134 -44,90 C-22,46 0,134 22,90 C44,46 66,134 88,90 C110,46 132,134 154,90 C176,46 198,134 220,90 C242,46 264,134 286,90 C308,46 330,134 352,90 C374,46 396,134 418,90 C440,46 462,134 484,90"
+                    fill="none" stroke="#0c0c0c" stroke-width="2.5" stroke-linecap="round"/>
+            </g>
+            <g class="card-wave-soft">
+              <path d="M-176,90 C-154,62 -132,118 -110,90 C-88,62 -66,118 -44,90 C-22,62 0,118 22,90 C44,62 66,118 88,90 C110,62 132,118 154,90 C176,62 198,118 220,90 C242,62 264,118 286,90 C308,62 330,118 352,90 C374,62 396,118 418,90 C440,62 462,118 484,90"
+                    fill="none" stroke="#bbb" stroke-width="1.5" stroke-linecap="round"/>
+            </g>
+            <text x="262" y="32" font-family="Georgia,serif" font-size="22" fill="rgba(0,0,0,0.12)" font-style="italic">|ψ⟩</text>
+          </svg>
+        </div>
+        <div class="work-info">
+          <span class="work-category">Fitzpatrick Lab project · my contribution</span>
+          <h3>QuBlitz Arena</h3>
+          <p>Part of QuBlitz, a browser-based quantum lab built within the Fitzpatrick Lab. I built the QuBlitz Arena game — its mechanics and play — and the physics engine beneath it: I implemented and unit-tested the underlying quantum mechanics (phase interference, Bell-pair entanglement) against a passing automated test suite, so the simulation stays numerically honest.</p>
+          <div class="tags">
+            <span class="tag">QuTiP</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">Plotly</span>
+            <span class="tag">quantum computing</span>
+          </div>
+          <p class="work-links"><a href="https://github.com/dmukuruva-creator/Qublitz_Draft" target="_blank" rel="noopener">My contribution ↗</a> · <a href="https://github.com/mvwf/qublitz" target="_blank" rel="noopener">Main repository ↗</a></p>
+        </div>
+      </article>
+
+      <!-- Studium: local-first / security shield motif -->
+      <article class="work-card" data-animate style="--anim-delay: 0.2s">
+        <div class="work-image">
+          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="320" height="180" fill="#f9f9f9"/>
+            <g transform="translate(160,90)">
+              <path d="M0,-52 C 22,-40 40,-38 46,-36 C 46,-4 34,32 0,52 C -34,32 -46,-4 -46,-36 C -40,-38 -22,-40 0,-52 Z"
+                    fill="none" stroke="#0c0c0c" stroke-width="2"/>
+              <path d="M -20,-2 L -6,14 L 22,-22" fill="none" stroke="#0c0c0c" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round" class="card-curve"/>
+            </g>
+            <text x="228" y="46" font-family="Georgia,serif" font-size="13" fill="rgba(0,0,0,0.16)" font-style="italic">local</text>
+          </svg>
+        </div>
+        <div class="work-info">
+          <span class="work-category">in progress</span>
+          <h3>Studium</h3>
+          <p>A local-first AI study tool: uploaded PDFs become quizzes, flashcards, and concept maps, with a quantitative drilling module for timed practice. I kept it private by design — API keys in the OS keychain, user data on-device — and hardened the server myself, writing the SSRF and request-body-cap regression tests that gate the network layer.</p>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">local-first</span>
+            <span class="tag">security testing</span>
+            <span class="tag">quant drill</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p class="footer-quote">He uses statistics like a drunk man uses a lamppost; more for support than illumination — Andrew Lang</p>
+      <p class="footer-copy">© 2026 David Mukuruva</p>
+    </div>
+    <div class="footer-attribution">
+      <p>This site was developed with inspiration from the personal pages of <a href="https://math.dartmouth.edu/~dana/other/" target="_blank" rel="noopener">Prof. Dana Williams</a> (Dartmouth Mathematics) and <a href="https://michaelrmontgomery.github.io" target="_blank" rel="noopener">Michael Montgomery</a> (Dartmouth Mathematics). Their willingness to be human on the internet is a model worth following.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

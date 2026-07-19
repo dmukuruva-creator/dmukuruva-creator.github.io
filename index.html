@@ -53,9 +53,8 @@
     </button>
     <nav class="nav" id="nav">
       <ul class="nav-list">
-        <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#research" class="nav-link">Research</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
         <li><a href="coursework.html" class="nav-link">Academic Record</a></li>
         <li><a href="notes.html" class="nav-link">Notes</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -76,9 +75,8 @@
       <div class="hero-content">
         <div class="hero-badges">
           <span class="hero-badge">Presented · JMM 2026</span>
-          <span class="hero-badge">Complex Analysis</span>
           <span class="hero-badge">Quantum Control · FitzLab</span>
-          <span class="hero-badge">Emerging Engineers · Lead Tutor</span>
+          <span class="hero-badge">Complex Analysis</span>
         </div>
         <p class="hero-tagline">Mathematics · Dartmouth College · Class of 2027</p>
         <h1>David Mukuruva</h1>
@@ -86,7 +84,7 @@
           I do quantitative research where the answer isn't known yet — an open problem in complex analysis, and reproducibility work on reinforcement-learned quantum control. What I care about in both is the same: is the result actually true, and does it survive someone checking it carefully?
         </p>
         <div class="btn-group">
-          <a href="#projects" class="btn btn-primary">View my work</a>
+          <a href="#research" class="btn btn-primary">See my research</a>
           <a href="#contact" class="btn btn-secondary">Get in touch</a>
         </div>
       </div>
@@ -118,43 +116,7 @@
   </div>
 </div>
 
-<!-- About -->
-<section class="about" id="about">
-  <div class="container">
-    <span class="section-label" data-animate>About</span>
-    <h2 class="section-title" data-animate style="--anim-delay: 0.05s">Rigor, and the Search for Pattern</h2>
-    <blockquote class="pullquote" data-animate style="--anim-delay: 0.1s">
-      A result isn't finished when it's stated — it's finished when it survives someone checking it carefully. I'm drawn to problems where that check is the hard part.
-    </blockquote>
-    <div class="about-body">
-      <div class="about-prose" data-animate style="--anim-delay: 0.15s">
-        <p>My coursework has reached graduate complex analysis alongside honors probability and real analysis. The same instinct runs through my research: I'm drawn to problems where the answer isn't settled, and to the unglamorous work of checking whether a claimed answer holds up.</p>
-        <p>For my thesis-track research I'm attacking two open problems on finite Blaschke products and inscribed ellipses — but only after auditing the literature to confirm nobody had quietly solved them first. In the Fitzpatrick Lab I benchmark reinforcement-learned quantum control on Dartmouth's HPC cluster, where my contribution has been to distrust the summary statistics: I showed the outcomes are a mixture rather than a bell curve, and that a "clean" group result was an artifact of how the data was conditioned.</p>
-        <p>Teaching is an extension of the same work. As a Physics TA and lead tutor for Dartmouth's Emerging Engineers program, I try to be the instructor I needed when I was first learning — one who insists that understanding is possible, not just memorization.</p>
-      </div>
-      <div class="skills-grid" data-animate style="--anim-delay: 0.2s">
-        <div class="skill-item">
-          <div class="skill-label">Languages</div>
-          <div class="skill-value">Python (NumPy/SciPy) · Sage · Lean 4 · R · C</div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-label">Quantitative</div>
-          <div class="skill-value">Probability · Linear algebra · Numerical methods · Stochastic optimization</div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-label">Research practice</div>
-          <div class="skill-value">Reproducibility · Experiment design · SLURM / HPC · Git</div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-label">Activities</div>
-          <div class="skill-value">Physics TA · DEE Lead Tutor · Archery · Chess</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Research -->
+<!-- Research — the high-impact work; fuller record on the Academic Record page -->
 <section class="research" id="research">
   <div class="container">
     <span class="section-label" data-animate>Research</span>
@@ -228,128 +190,14 @@
         </div>
       </div>
     </article>
+
+    <p class="section-more" data-animate>
+      More on the <a href="projects.html">projects</a> and <a href="coursework.html">academic record</a> pages.
+    </p>
   </div>
 </section>
 
-<!-- Projects — SVG animated card visuals -->
-<section class="projects" id="projects">
-  <div class="container">
-    <span class="section-label" data-animate>Projects</span>
-    <h2 class="section-title" data-animate style="--anim-delay: 0.05s">What I have built</h2>
-    <div class="work-grid">
-
-      <!-- Aleph-Nought: animated function curve on coordinate axes -->
-      <article class="work-card" data-animate style="--anim-delay: 0s">
-        <div class="work-image">
-          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="320" height="180" fill="#f9f9f9"/>
-            <!-- Fine grid -->
-            <line x1="0" y1="45" x2="320" y2="45" stroke="#ebebeb" stroke-width="1"/>
-            <line x1="0" y1="90" x2="320" y2="90" stroke="#ddd" stroke-width="1"/>
-            <line x1="0" y1="135" x2="320" y2="135" stroke="#ebebeb" stroke-width="1"/>
-            <line x1="80" y1="0" x2="80" y2="180" stroke="#ebebeb" stroke-width="1"/>
-            <line x1="160" y1="0" x2="160" y2="180" stroke="#ddd" stroke-width="1"/>
-            <line x1="240" y1="0" x2="240" y2="180" stroke="#ebebeb" stroke-width="1"/>
-            <!-- Axes -->
-            <line x1="30" y1="155" x2="295" y2="155" stroke="#bbb" stroke-width="1.5"/>
-            <line x1="50" y1="170" x2="50" y2="20" stroke="#bbb" stroke-width="1.5"/>
-            <!-- Arrow heads -->
-            <polygon points="295,152 303,155 295,158" fill="#bbb"/>
-            <polygon points="47,20 50,12 53,20" fill="#bbb"/>
-            <!-- Animated curve: polynomial/sinusoidal blend -->
-            <path d="M 55,145 C 90,140 110,50 160,95 C 205,135 235,45 285,40"
-                  fill="none" stroke="#0c0c0c" stroke-width="2.5"
-                  stroke-linecap="round"
-                  class="card-curve"/>
-            <!-- Dot at end -->
-            <circle cx="285" cy="40" r="4" fill="#0c0c0c" class="card-curve-dot"/>
-            <!-- f(x) label -->
-            <text x="258" y="34" font-family="Georgia,serif" font-size="14" fill="#0c0c0c" font-style="italic" class="card-curve-dot">f (x)</text>
-          </svg>
-        </div>
-        <div class="work-info">
-          <span class="work-category">live · in active development</span>
-          <h3><a href="https://www.aleph-nought.com" target="_blank" rel="noopener">Aleph-Nought Learning Platform ↗</a></h3>
-          <p>A full-stack platform I built, with content covering six Dartmouth math and physics course syllabi. Its core is a symbolic exercise engine that parses and evaluates free-form mathematical expressions for automated grading, fed by a content pipeline I built (Manim-animated lectures, transcribed TA audio). Full-stack: Next.js, FastAPI, PostgreSQL, deployed to production.</p>
-          <div class="tags">
-            <span class="tag">Next.js</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Manim</span>
-            <span class="tag">SymPy</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Qublitz: animated scrolling waveform (quantum oscillation) -->
-      <article class="work-card" data-animate style="--anim-delay: 0.1s">
-        <div class="work-image">
-          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" overflow="hidden" aria-hidden="true">
-            <rect width="320" height="180" fill="#f8f8f8"/>
-            <!-- Baseline -->
-            <line x1="0" y1="90" x2="320" y2="90" stroke="#e8e8e8" stroke-width="1"/>
-            <!-- Moving primary wave: period 88px, starts left of view -->
-            <g class="card-wave">
-              <path d="M-176,90 C-154,46 -132,134 -110,90 C-88,46 -66,134 -44,90 C-22,46 0,134 22,90 C44,46 66,134 88,90 C110,46 132,134 154,90 C176,46 198,134 220,90 C242,46 264,134 286,90 C308,46 330,134 352,90 C374,46 396,134 418,90 C440,46 462,134 484,90"
-                    fill="none" stroke="#0c0c0c" stroke-width="2.5" stroke-linecap="round"/>
-            </g>
-            <!-- Phase-shifted fainter second wave -->
-            <g class="card-wave-soft">
-              <path d="M-176,90 C-154,62 -132,118 -110,90 C-88,62 -66,118 -44,90 C-22,62 0,118 22,90 C44,62 66,118 88,90 C110,62 132,118 154,90 C176,62 198,118 220,90 C242,62 264,118 286,90 C308,62 330,118 352,90 C374,62 396,118 418,90 C440,62 462,118 484,90"
-                    fill="none" stroke="#bbb" stroke-width="1.5" stroke-linecap="round"/>
-            </g>
-            <!-- |ψ⟩ label -->
-            <text x="262" y="32" font-family="Georgia,serif" font-size="22" fill="rgba(0,0,0,0.12)" font-style="italic">|ψ⟩</text>
-          </svg>
-        </div>
-        <div class="work-info">
-          <span class="work-category">Fitzpatrick Lab project · my contribution</span>
-          <h3>Qublitz — Virtual Qubit Simulator</h3>
-          <p>A browser-based quantum lab — Bloch-sphere visualization, microwave-pulse simulation, IQ mixing — built within the Fitzpatrick Lab. My contribution was the QuBlitz Arena game — its mechanics and play — and the physics engine beneath it: I implemented and unit-tested the underlying quantum mechanics (phase interference, Bell-pair entanglement) against a passing automated test suite, so the simulation stays numerically honest.</p>
-          <div class="tags">
-            <span class="tag">QuTiP</span>
-            <span class="tag">Streamlit</span>
-            <span class="tag">Plotly</span>
-            <span class="tag">quantum computing</span>
-          </div>
-          <p class="work-links"><a href="https://github.com/dmukuruva-creator/Qublitz_Draft" target="_blank" rel="noopener">My contribution ↗</a> · <a href="https://github.com/mvwf/qublitz" target="_blank" rel="noopener">Main repository ↗</a></p>
-        </div>
-      </article>
-
-      <!-- Studium: local-first / security shield motif -->
-      <article class="work-card" data-animate style="--anim-delay: 0.2s">
-        <div class="work-image">
-          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="320" height="180" fill="#f9f9f9"/>
-            <g transform="translate(160,90)">
-              <!-- shield -->
-              <path d="M0,-52 C 22,-40 40,-38 46,-36 C 46,-4 34,32 0,52 C -34,32 -46,-4 -46,-36 C -40,-38 -22,-40 0,-52 Z"
-                    fill="none" stroke="#0c0c0c" stroke-width="2"/>
-              <!-- check inside -->
-              <path d="M -20,-2 L -6,14 L 22,-22" fill="none" stroke="#0c0c0c" stroke-width="2.6"
-                    stroke-linecap="round" stroke-linejoin="round" class="card-curve"/>
-            </g>
-            <text x="228" y="46" font-family="Georgia,serif" font-size="13" fill="rgba(0,0,0,0.16)" font-style="italic">local</text>
-          </svg>
-        </div>
-        <div class="work-info">
-          <span class="work-category">in progress</span>
-          <h3>Studium</h3>
-          <p>A local-first AI study tool: uploaded PDFs become quizzes, flashcards, and concept maps, with a quantitative drilling module for timed practice. I kept it private by design — API keys in the OS keychain, user data on-device — and hardened the server myself, writing the SSRF and request-body-cap regression tests that gate the network layer.</p>
-          <div class="tags">
-            <span class="tag">TypeScript</span>
-            <span class="tag">local-first</span>
-            <span class="tag">security testing</span>
-            <span class="tag">quant drill</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- Resume & CV Downloads — PDFs staged at assets/ 2026-07-16 (quant résumé + academic CV). -->
+<!-- Resume & CV Downloads -->
 <section class="download-section" id="documents">
   <div class="container">
     <span class="section-label" data-animate>Documents</span>
@@ -359,7 +207,7 @@
       <a href="assets/david-mukuruva-cv.pdf" class="download-card" data-animate style="--anim-delay: 0s" download>
         <span class="download-type">Full Academic Record</span>
         <h3>Curriculum Vitae</h3>
-        <p>Research, publications, teaching, coursework, and service — the complete record for academic and research applications.</p>
+        <p>Research, presentations, teaching, coursework, and service — the complete record for academic and research applications.</p>
         <span class="download-cta">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download PDF
@@ -377,17 +225,6 @@
       </a>
 
     </div>
-  </div>
-</section>
-
-<!-- Notes teaser — a little personality, and a path into the Notes page -->
-<section class="notes-teaser">
-  <div class="container">
-    <p class="notes-teaser-text" data-animate>
-      Not everything worth saying fits in a CV. I keep a few
-      <a href="notes.html">notes</a> — on dual-majoring, on shooting recurve, and on
-      teaching introductory mechanics while studying complex analysis.
-    </p>
   </div>
 </section>
 
