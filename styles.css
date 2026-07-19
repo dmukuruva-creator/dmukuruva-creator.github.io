@@ -261,6 +261,11 @@ section { padding: var(--space-xl) 0; }
 .cred-credential { display: block; font-family: var(--font-serif); font-size: 1.6rem; font-weight: 400; color: var(--color-text); line-height: 1.1; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
 .cred-label { display: block; font-family: var(--font-sans); font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-faint); line-height: 1.7; }
 
+/* Credential bar with three items — centered, evenly distributed */
+.cred-grid--credentials { grid-template-columns: 1fr; }
+@media (min-width: 600px) { .cred-grid--credentials { grid-template-columns: repeat(3, 1fr); } }
+.cred-grid--credentials .cred-item { text-align: center; }
+
 /* ===========================
    About
    =========================== */
